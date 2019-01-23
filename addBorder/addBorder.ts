@@ -1,12 +1,9 @@
 const addBorder = (str: String[]): any => {
-  const wall: any = "****";
+  const wall: any = "*".repeat(str.length + 2);
   const paddedStr = str.map(val => {
-    let newStr: String = val;
-    return ["*", ...newStr, "*"];
+    return ["*", ...val, "*"];
   });
-  paddedStr.push(wall);
-  paddedStr.unshift(wall);
-  return paddedStr;
+  return [wall, ...paddedStr, wall];
 };
 
 console.log(addBorder(["A", "B", "C", "D", "E"]));
